@@ -24,8 +24,100 @@
   --topbar-h: 54px;
 }
 
-/* basic */
-*{ box-sizing:border-box; }
+/* Passcode Modal */
+.passcode-modal {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  transition: opacity 600ms ease, visibility 600ms ease;
+}
+
+.passcode-modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.passcode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.passcode-label {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--ink) 75%, var(--muted));
+  margin: 0;
+  line-height: 1.5;
+}
+
+.passcode-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklab, var(--line) 70%, transparent);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.passcode-input:focus {
+  outline: none;
+  border-color: rgba(127,155,182,0.5);
+  box-shadow: 0 0 12px rgba(127,155,182,0.15);
+}
+
+.passcode-btn {
+  padding: 11px 28px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--blue) 60%, var(--line));
+  background: color-mix(in oklab, var(--paper) 85%, var(--blue));
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.passcode-btn:hover {
+  background: color-mix(in oklab, var(--paper) 70%, var(--blue));
+  box-shadow: 0 6px 16px rgba(127,155,182,0.2);
+}
+
+.passcode-btn:active {
+  transform: scale(0.98);
+}
+
+.passcode-hint {
+  font-size: 11px;
+  color: var(--muted2);
+  margin: 0;
+  opacity: 0.6;
+}
+
+.passcode-instruction {
+  font-size: 11px;
+  color: color-mix(in oklab, var(--muted) 70%, var(--blue));
+  margin: 5px 0 0;
+  opacity: 0.7;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 49%, 100% { opacity: 0.7; }
+  50%, 99% { opacity: 0.3; }
+}
 html,body{ height:100%; }
 body{
   margin:0;

@@ -1,4 +1,42 @@
 (function(){
+  // Passcode verification
+  const correctPasscode = 'us'; // Change this to your desired passcode
+  const passcodeModal = document.getElementById('passcodeModal');
+  const passcodeInput = document.getElementById('passcodeInput');
+  const passcodeBtn = document.getElementById('passcodeBtn');
+  let isUnlocked = false;
+
+  const unlockSite = () => {
+    isUnlocked = true;
+    passcodeModal.classList.add('hidden');
+    passcodeInput.value = '';
+  };
+
+  // Check passcode on button click
+  passcodeBtn.addEventListener('click', () => {
+    if(passcodeInput.value.toLowerCase() === correctPasscode.toLowerCase()){
+      unlockSite();
+    } else {
+      passcodeInput.value = '';
+      passcodeInput.style.borderColor = '#ff4444';
+      passcodeInput.style.boxShadow = '0 0 12px rgba(255,68,68,0.2)';
+      setTimeout(() => {
+        passcodeInput.style.borderColor = '';
+        passcodeInput.style.boxShadow = '';
+      }, 300);
+    }
+  });
+
+  // Check passcode on Enter key
+  passcodeInput.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter'){
+      passcodeBtn.click();
+    }
+  });
+
+  // Auto-focus on input
+  passcodeInput.focus();
+
   const root = document.documentElement;
   const distanceText = document.getElementById('distanceText');
 
@@ -421,7 +459,7 @@
     ctSmall.textContent = dayCT.format(now);
     hydSmall.textContent = dayHYD.format(now);
     const delta = now - reconnect;
-    sinceEl.textContent = 'but still these numbers feel familiar/common? dont they?  ' + (delta > 0 ? humanDuration(delta) : '00:00');
+    sinceEl.textContent = 'but still these numbers feel familiar/common- dont they ?    ' + (delta > 0 ? humanDuration(delta) : '00:00');
   }
 
   // Animation loop controlled by scroll
