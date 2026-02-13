@@ -25,6 +25,28 @@
         passcodeInput.style.boxShadow = '';
       }, 300);
     }
+
+    // click-to-reveal: clicking a section bigline toggles the nearest [data-reveal]
+    function installClickReveal(){
+      document.querySelectorAll('.hint-click').forEach(h => {
+        const parent = h.parentElement;
+        const big = parent && parent.querySelector('.bigline');
+        const target = parent && parent.querySelector('[data-reveal]');
+        if(!big || !target) return;
+        // also make the hint itself clickable
+        const clickEl = big;
+        [clickEl, h].forEach(el => {
+          el.style.cursor = 'pointer';
+          el.addEventListener('click', e => {
+            e.preventDefault();
+            target.classList.toggle('on');
+            // ensure it's visible to screen readers/focus
+            if(target.classList.contains('on')) target.setAttribute('aria-hidden','false');
+            else target.setAttribute('aria-hidden','true');
+          });
+        });
+      });
+    }
   });
 
   // Check passcode on Enter key

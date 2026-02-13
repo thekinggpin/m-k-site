@@ -24,6 +24,33 @@
   --topbar-h: 54px;
 }
 
+.hint-click{
+  margin-top:8px;
+  font-size:12px;
+  color:rgba(255,255,255,0.55);
+  text-transform:lowercase;
+  letter-spacing:0.12em;
+  cursor:pointer;
+  user-select:none;
+  transition:color 180ms var(--ease);
+}
+.hint-click:hover{ color:rgba(255,255,255,0.85); }
+
+/* Footer */
+.site-footer{
+  text-align:center;
+  padding:18px 0 30px;
+  font-size:13px;
+  color:rgba(255,255,255,0.55);
+  letter-spacing:0.08em;
+  pointer-events:auto;
+}
+.site-footer div{opacity:0.95}
+@media (prefers-reduced-motion: no-preference){
+  .site-footer{transition:opacity 200ms var(--ease);} 
+  .site-footer:hover{opacity:1}
+}
+
 /* Passcode Modal */
 .passcode-modal {
   position: fixed;
