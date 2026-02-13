@@ -1,188 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You, Always</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiet Distance</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="fade-in">Hey Meghana,</h1>
-            <p class="fade-in" style="animation-delay: 0.3s;">From Bridgeport to Hyderabad</p>
-            <p class="fade-in" style="animation-delay: 0.6s;">Distance doesn't define us</p>
-            <div class="scroll-hint">
-                <p>Scroll to come closer</p>
-                <i class="fas fa-arrow-down"></i>
-            </div>
+  <header class="topbar" aria-hidden="true">
+    <div class="topbar-inner">
+      <div class="tag"><span class="dot"></span><span class="k">K</span><span style="color:var(--muted2)">—</span><span style="color:var(--muted2)">Connecticut</span></div>
+      <div class="linewrap" title="distance">
+        <div class="linebase"></div>
+        <div class="lineshrink"></div>
+      </div>
+      <div class="tag"><span class="m">M</span><span style="color:var(--muted2)">—</span><span style="color:var(--muted2)">Hyderabad</span><span class="dot" style="background: color-mix(in oklab, var(--gold) 65%, var(--line));"></span></div>
+      <div class="distance" id="distanceText">8100 miles</div>
+    </div>
+  </header>
+
+  <main class="snap" id="snapRoot">
+
+    <!-- 2) Opening -->
+    <section class="section" id="s0">
+      <div class="wrap opening breath">
+        <div class="note paper" aria-label="opening note">
+          <p class="a">Hey Meghana,</p>
+          <div class="spacer"></div>
+          <p class="b">I noticed something recently.</p>
+          <div class="spacer"></div>
+          <p class="c quiet">Not in a big way. Just… the small way things keep showing up.</p>
         </div>
+      </div>
     </section>
 
-    <!-- About Us Section -->
-    <section class="about">
-        <div class="container">
-            <div class="location-map">
-                <div class="location bridgeport">
-                    <p>Bridgeport</p>
-                    <p class="name">Kartikeya</p>
-                </div>
-                <div class="connection-line"></div>
-                <div class="location hyderabad">
-                    <p>Hyderabad</p>
-                    <p class="name">Meghana</p>
-                </div>
-            </div>
-            <p class="about-text">Every day, no matter the distance, we're thinking of each other. This website is a small reminder that physical distance is just a number.</p>
+    <!-- 3) Globe section -->
+    <section class="section" id="s1">
+      <div class="wrap globe-grid">
+        <div class="globe-card paper" data-reveal>
+          <canvas id="globe" width="1200" height="800" aria-label="globe visualization"></canvas>
         </div>
+        <div class="globe-caption" data-reveal>
+          <div class="bigline">Sometimes I catch myself doing the math.</div>
+          <div class="spacer" style="height:18px"></div>
+          <div class="quiet">Not because it matters. More like a habit. Like you look at a globe when you’re trying to remember where a thought started.</div>
+          <div class="spacer" style="height:18px"></div>
+          <div class="quiet">Two dots. A line. A normal amount of time passing. And still, the mind keeps you nearby.</div>
+        </div>
+      </div>
     </section>
 
-    <!-- Things We Love Section -->
-    <section class="loves">
-        <div class="container">
-            <h2>Things I Love About You</h2>
-            <div class="loves-grid">
-                <div class="love-card" data-love="Your Smile">
-                    <i class="fas fa-sun"></i>
-                    <p>Your Smile</p>
-                </div>
-                <div class="love-card" data-love="South Indian Breakfast Dates">
-                    <i class="fas fa-utensils"></i>
-                    <p>South Indian Breakfast Dates</p>
-                </div>
-                <div class="love-card" data-love="Our Deep Conversations">
-                    <i class="fas fa-comments"></i>
-                    <p>Our Deep Conversations</p>
-                </div>
-                <div class="love-card" data-love="Walking Together">
-                    <i class="fas fa-person-hiking"></i>
-                    <p>Walking Together</p>
-                </div>
-                <div class="love-card" data-love="Your Laughter">
-                    <i class="fas fa-laugh"></i>
-                    <p>Your Laughter</p>
-                </div>
-                <div class="love-card" data-love="Simple Moments">
-                    <i class="fas fa-flower"></i>
-                    <p>Simple Moments</p>
-                </div>
-            </div>
+    <!-- 4) Map section -->
+    <section class="section" id="s2">
+      <div class="wrap map-grid">
+        <div class="map-card paper" data-reveal>
+          <p class="sub">it’s subtle. you only notice if you stay with it.</p>
+          <div class="map" id="map">
+            <div class="pin" id="pinK" aria-hidden="true"></div>
+            <div class="pin" id="pinM" aria-hidden="true"></div>
+            <svg class="arc" id="arc" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <path id="arcPath" d="" fill="none" stroke="rgba(127,155,182,0.35)" stroke-width="0.8" stroke-linecap="round" />
+            </svg>
+          </div>
         </div>
+        <div class="quiet" data-reveal style="max-width:70ch; padding-left:2px;">
+          Some distances close quickly on a screen.
+          <br />
+          The other kind changes slower.
+        </div>
+      </div>
     </section>
 
-    <!-- Memories & Dreams Section -->
-    <section class="dreams">
-        <div class="container">
-            <h2>Dreams & Moments</h2>
-            <div class="dream-list">
-                <div class="dream-item">
-                    <div class="dream-icon">🍷</div>
-                    <h3>Red Wine at a Cozy Pub</h3>
-                    <p>Just you, me, and good conversation</p>
-                </div>
-                <div class="dream-item">
-                    <div class="dream-icon">🎳</div>
-                    <h3>Bowling Nights</h3>
-                    <p>Friendly competition and lots of laughter</p>
-                </div>
-                <div class="dream-item">
-                    <div class="dream-icon">🗻</div>
-                    <h3>Travel Adventures</h3>
-                    <p>Exploring Leh Ladakh, Kashmir, Shimla, and beyond</p>
-                </div>
-                <div class="dream-item">
-                    <div class="dream-icon">🌸</div>
-                    <h3>Simple Moments</h3>
-                    <p>A single flower, a simple day, perfect company</p>
-                </div>
-            </div>
-        </div>
+    <!-- 5) Memory fragments -->
+    <section class="section" id="s3">
+      <div class="wrap fragments">
+        <div class="fragment" id="f1">9th class</div>
+        <div class="fragment" id="f2">lost contact</div>
+        <div class="fragment" id="f3">randomly again at 27</div>
+        <div class="fragment" id="f4">same type of conversations</div>
+      </div>
     </section>
 
-    <!-- Colors of You Section -->
-    <section class="colors">
-        <div class="container">
-            <h2>Your Colors</h2>
-            <div class="color-showcase">
-                <div class="color-item oswald-blue">
-                    <p>Oswald Blue</p>
-                    <span>Like your elegant style</span>
-                </div>
-                <div class="color-item sunflower">
-                    <p>Golden Yellow</p>
-                    <span>Like sunflowers you adore</span>
-                </div>
-                <div class="color-item white">
-                    <p>Pristine White</p>
-                    <span>Your simple, pure essence</span>
-                </div>
-            </div>
+    <!-- 6) Familiar things -->
+    <section class="section" id="s4">
+      <div class="wrap">
+        <div class="bigline" data-reveal>It’s not the topics. It’s the pattern.</div>
+        <div class="spacer" style="height:18px"></div>
+        <div class="cards" aria-label="comfort patterns" data-reveal>
+          <div class="card">
+            <p class="t">late night talks</p>
+            <p class="d">The kind where you don’t announce you’re tired. You just keep replying a bit slower.</p>
+          </div>
+          <div class="card">
+            <p class="t">did you eat</p>
+            <p class="d">Not a big check-in. Just practical. Like it belongs in the same list as charging your phone.</p>
+          </div>
+          <div class="card">
+            <p class="t">health reminders</p>
+            <p class="d">Water. Sleep. Don’t ignore it. The tone is casual, but it lands like someone paying attention.</p>
+          </div>
+          <div class="card">
+            <p class="t">random nostalgia</p>
+            <p class="d">A name, a place, a school thing… and suddenly the memory feels current for a second.</p>
+          </div>
+          <div class="card">
+            <p class="t">childhood snacks</p>
+            <p class="d">Mention one, and it becomes a whole scene. Not dramatic. Just clear.</p>
+          </div>
+          <div class="card">
+            <p class="t">collecting things from places</p>
+            <p class="d">Tickets, little objects, photos you forget you took. Like proof you were there.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- GIF/Video Section with appreciation -->
-    <section class="appreciation">
-        <div class="container">
-            <h2>Teachers Who Shaped You</h2>
-            <p class="sub-text">You speak fondly of Lakshmi and Swapnika maams</p>
-            <p class="main-text">Just like they've shaped you, you've shaped my heart in the most beautiful way.</p>
-            <div class="appreciation-box">
-                <i class="fas fa-heart"></i>
-            </div>
+    <!-- 7) Future ideas -->
+    <section class="section" id="s5">
+      <div class="wrap">
+        <div class="bigline" data-reveal>Sometimes the mind tries out a normal future.</div>
+        <div class="spacer" style="height:18px"></div>
+        <div class="ideas" data-reveal>
+          <div class="idea"><strong>one day maybe</strong> — bowling</div>
+          <div class="idea"><strong>one day maybe</strong> — mountains</div>
+          <div class="idea"><strong>one day maybe</strong> — a concert you don’t overthink</div>
+          <div class="idea"><strong>one day maybe</strong> — quiet dinner, no rush</div>
         </div>
+        <div class="spacer" style="height:18px"></div>
+        <div class="quiet" data-reveal style="max-width:66ch">Not as plans. More as possibilities that feel… plausible. Like they already fit the shape of us.</div>
+      </div>
     </section>
 
-    <!-- Interactive KBC Section -->
-    <section class="kbc-section">
-        <div class="container">
-            <div class="kbc-header">
-                <h2>Kaun Banega Crorepati? ❤️</h2>
-                <p>A special question just for you...</p>
-            </div>
-            <div class="kbc-question-box">
-                <h3 class="kbc-question">Which of these describes you best?</h3>
-                <div class="kbc-options">
-                    <button class="kbc-option" data-option="1">
-                        <span class="option-label">A.</span>
-                        <span class="option-text">Someone who lights up every room like a sunflower</span>
-                    </button>
-                    <button class="kbc-option" data-option="2">
-                        <span class="option-label">B.</span>
-                        <span class="option-text">A wanderer dreaming of mountains and adventures</span>
-                    </button>
-                    <button class="kbc-option" data-option="3">
-                        <span class="option-label">C.</span>
-                        <span class="option-text">Someone who values deep conversations over small talk</span>
-                    </button>
-                    <button class="kbc-option" data-option="4">
-                        <span class="option-label">D.</span>
-                        <span class="option-text">All of the above - because you're all this and more</span>
-                    </button>
-                </div>
-                <div class="kbc-result" id="kbcResult">
-                    <h3>🎉 Congratulations! 🎉</h3>
-                    <p>You're absolutely correct! Because every answer is right when it comes to you. ❤️</p>
-                </div>
-            </div>
+    <!-- 8) Words section -->
+    <section class="section" id="s6">
+      <div class="wrap">
+        <div class="bigline" data-reveal>Some words do a lot of work.</div>
+        <div class="spacer" style="height:18px"></div>
+        <div class="words" aria-label="tap to reveal words" data-reveal>
+          <div class="word" data-word>
+            <p class="w">sarle</p>
+            <p class="m">It’s fine. It’s okay. Not a big deal. (But it still gets said.)</p>
+          </div>
+          <div class="word" data-word>
+            <p class="w">parle</p>
+            <p class="m">Like “let it be.” Move on. Don’t stretch it into a whole thing.</p>
+          </div>
+          <div class="word" data-word>
+            <p class="w">ok le</p>
+            <p class="m">Not cold. Not warm. Just a small agreement that keeps the conversation flowing.</p>
+          </div>
         </div>
+        <div class="spacer" style="height:18px"></div>
+        <div class="quiet" data-reveal style="max-width:70ch">I didn’t realize how much tone is carried by tiny phrases until they came back exactly the same.</div>
+      </div>
     </section>
 
-    <!-- Final Message -->
-    <section class="final-message">
-        <div class="container">
-            <h2>Until We're Together</h2>
-            <p>Every day brings us closer. Every moment counts. Every thought of you keeps me going.</p>
-            <p class="signature">Always yours,<br>Kartikeya ❤️</p>
-            <div class="floating-flowers">
-                <div class="flower">🌼</div>
-                <div class="flower">🌼</div>
-                <div class="flower">🌼</div>
-            </div>
+    <!-- 9) Time section -->
+    <section class="section" id="s7">
+      <div class="wrap">
+        <div class="bigline" data-reveal>Time zones make it obvious. The rest is quieter.</div>
+        <div class="spacer" style="height:18px"></div>
+        <div class="time-grid" data-reveal>
+          <div class="clock paper">
+            <p class="label">Connecticut time</p>
+            <p class="time" id="ctTime">--:--</p>
+            <p class="small" id="ctSmall">—</p>
+          </div>
+          <div class="clock paper">
+            <p class="label">Hyderabad time</p>
+            <p class="time" id="hydTime">--:--</p>
+            <p class="small" id="hydSmall">—</p>
+          </div>
         </div>
+        <div class="since paper" data-reveal>
+          <p class="k">still daytime somewhere</p>
+          <p class="v" id="since">time since reconnect: —</p>
+        </div>
+      </div>
     </section>
 
-    <script src="script.js"></script>
+    <!-- 10) Photo section -->
+    <section class="section" id="s8">
+      <div class="wrap">
+        <div class="bigline" data-reveal>things we never really documented</div>
+        <div class="spacer" style="height:14px"></div>
+        <div class="photos" data-reveal>
+          <div class="paper photo-grid" id="photoGrid" aria-label="photo placeholders">
+            <div class="ph" data-slot="0"></div>
+            <div class="ph" data-slot="1"></div>
+            <div class="ph" data-slot="2"></div>
+            <div class="ph" data-slot="3"></div>
+            <div class="ph" data-slot="4"></div>
+            <div class="ph" data-slot="5"></div>
+          </div>
+          <div class="paper upload">
+            <p class="title">Add a few images (optional)</p>
+            <p class="desc">No auto-upload. Nothing leaves this file. It just fills the empty squares while you’re here.</p>
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <p class="hint">Tip: choose 1–6 images. They’ll place left to right. Refresh clears them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11) Color memory -->
+    <section class="section" id="s9">
+      <div class="wrap">
+        <div class="bigline" data-reveal>color memory</div>
+        <div class="spacer" style="height:16px"></div>
+        <div class="swatches" data-reveal aria-label="color swatches">
+          <div class="sw" style="--c: rgba(127,155,182,0.70)"></div>
+          <div class="sw" style="--c: rgba(183,155,92,0.68)"></div>
+          <div class="sw" style="--c: rgba(167,173,182,0.78)"></div>
+          <div class="sw" style="--c: rgba(251,250,247,1)"></div>
+          <div class="sw" style="--c: rgba(45,55,72,0.20)"></div>
+        </div>
+        <div class="spacer" style="height:18px"></div>
+        <div class="quiet" data-reveal style="max-width:66ch">No labels. Just colors that keep showing up in different places.</div>
+      </div>
+    </section>
+
+    <!-- 12) Question section -->
+    <section class="section" id="s10">
+      <div class="wrap q">
+        <div class="bigline" data-reveal>what was this?</div>
+        <div class="opts" data-reveal>
+          <button class="btn" data-opt>conversation habit</button>
+          <button class="btn" data-opt>coincidence</button>
+          <button class="btn" data-opt>unfinished thought</button>
+        </div>
+        <div class="paper reply" id="reply">maybe just familiarity</div>
+      </div>
+    </section>
+
+    <!-- 13) Ending -->
+    <section class="section" id="s11">
+      <div class="wrap ending">
+        <div class="initials" aria-hidden="true">
+          <span id="i1">R</span>
+          <span id="i2">M</span>
+        </div>
+        <div class="paper final" data-reveal>
+          <div class="quiet" style="max-width:66ch">
+            I think some distances only exist on maps.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
