@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="cursor-m">M</div>
+  <div id="cursor-k">K</div>
   <header class="topbar" aria-hidden="true">
     <div class="topbar-inner">
       <div class="tag"><span class="dot"></span><span class="k">K</span><span style="color:var(--muted2)">—</span><span style="color:var(--muted2)">Connecticut</span></div>
@@ -27,7 +29,7 @@
         <div class="note paper" aria-label="opening note">
           <p class="a">Hey Meghana,</p>
           <div class="spacer"></div>
-          <p class="b">I noticed something recently.</p>
+          <p class="b">I noticed things recently.</p>
           <div class="spacer"></div>
           <p class="c quiet">Not in a big way. Just… the small way things keep showing up.</p>
         </div>
@@ -43,30 +45,28 @@
         <div class="globe-caption" data-reveal>
           <div class="bigline">Sometimes I catch myself doing the math.</div>
           <div class="spacer" style="height:18px"></div>
-          <div class="quiet">Not because it matters. More like a habit. Like you look at a globe when you’re trying to remember where a thought started.</div>
+          <div class="quiet">Not because it matters. More like a habit. Like you look at a globe when you’re trying to remember where a thought started. M?</div>
           <div class="spacer" style="height:18px"></div>
-          <div class="quiet">Two dots. A line. A normal amount of time passing. And still, the mind keeps you nearby.</div>
+          <div class="quiet">Two dots. A line. A rotation. A revolution. And still, the mind keeps you nearby.</div>
         </div>
       </div>
     </section>
 
-    <!-- 4) Map section -->
+    <!-- 4) Map section with drawing puzzle -->
     <section class="section" id="s2">
       <div class="wrap map-grid">
         <div class="map-card paper" data-reveal>
-          <p class="sub">it’s subtle. you only notice if you stay with it.</p>
+          <p class="sub">it's subtle.</p>
           <div class="map" id="map">
-            <div class="pin" id="pinK" aria-hidden="true"></div>
-            <div class="pin" id="pinM" aria-hidden="true"></div>
-            <svg class="arc" id="arc" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <path id="arcPath" d="" fill="none" stroke="rgba(127,155,182,0.35)" stroke-width="0.8" stroke-linecap="round" />
-            </svg>
+            <canvas id="drawingCanvas" width="600" height="420" aria-label="draw the connection"></canvas>
+            <div class="drawing-hint" id="drawingHint">try to connect any two dots</div>
+            <div class="drawing-success" id="drawingSuccess">You did it! Thats how connection's happen/patterns form, unless something brings them close.</div>
           </div>
         </div>
         <div class="quiet" data-reveal style="max-width:70ch; padding-left:2px;">
-          Some distances close quickly on a screen.
+          But also, critically: Some distances close quickly.
           <br />
-          The other kind changes slower.
+          The other distances change slower, burn more - learn more.
         </div>
       </div>
     </section>
@@ -74,41 +74,62 @@
     <!-- 5) Memory fragments -->
     <section class="section" id="s3">
       <div class="wrap fragments">
-        <div class="fragment" id="f1">9th class</div>
-        <div class="fragment" id="f2">lost contact</div>
-        <div class="fragment" id="f3">randomly again at 27</div>
-        <div class="fragment" id="f4">same type of conversations</div>
+        <div class="fragment" id="f1" data-reveal>9th Grade</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f7" data-reveal>10th Grade</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f2" data-reveal>*lost contact like for ever*</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f8" data-reveal>facebook graudation post</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f8" data-reveal>instagram concern</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f9" data-reveal>*silence again*</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f3" data-reveal>🍊</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f3" data-reveal>2024, November</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f4" data-reveal>2025</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f4" data-reveal>2026</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f4" data-reveal>2027</div>
+        <div style="height: 140px"></div>
+        <div class="fragment" id="f4" data-reveal>∞</div>
+        <div style="height: 140px"></div>
+        
       </div>
     </section>
 
     <!-- 6) Familiar things -->
     <section class="section" id="s4">
       <div class="wrap">
-        <div class="bigline" data-reveal>It’s not the topics. It’s the pattern.</div>
+        <div class="bigline" data-reveal>It’s not the topics - It’s the pattern.</div>
         <div class="spacer" style="height:18px"></div>
         <div class="cards" aria-label="comfort patterns" data-reveal>
           <div class="card">
-            <p class="t">late night talks</p>
-            <p class="d">The kind where you don’t announce you’re tired. You just keep replying a bit slower.</p>
+            <p class="t">comfortable communication</p>
+            <p class="d">The kind where you don’t announce you’re tired. You just keep replying a bit slower. And then Sleep.</p>
           </div>
           <div class="card">
-            <p class="t">did you eat</p>
-            <p class="d">Not a big check-in. Just practical. Like it belongs in the same list as charging your phone.</p>
+            <p class="t">did you eat? did you do x?</p>
+            <p class="d">Not a big check-in. Just practical. Like it belongs in the same list as charging your phone when its close to 0% :P.</p>
           </div>
           <div class="card">
-            <p class="t">health reminders</p>
-            <p class="d">Water. Sleep. Don’t ignore it. The tone is casual, but it lands like someone paying attention.</p>
+            <p class="t">health reminders.. stuff reminders</p>
+            <p class="d">Water. Sleep. Don’t ignore it. Someone's paying attention.</p>
           </div>
           <div class="card">
             <p class="t">random nostalgia</p>
             <p class="d">A name, a place, a school thing… and suddenly the memory feels current for a second.</p>
           </div>
           <div class="card">
-            <p class="t">childhood snacks</p>
+            <p class="t">food</p>
             <p class="d">Mention one, and it becomes a whole scene. Not dramatic. Just clear.</p>
           </div>
           <div class="card">
-            <p class="t">collecting things from places</p>
+            <p class="t">passionate about things we love</p>
             <p class="d">Tickets, little objects, photos you forget you took. Like proof you were there.
             </p>
           </div>
@@ -122,10 +143,11 @@
         <div class="bigline" data-reveal>Sometimes the mind tries out a normal future.</div>
         <div class="spacer" style="height:18px"></div>
         <div class="ideas" data-reveal>
-          <div class="idea"><strong>one day maybe</strong> — bowling</div>
-          <div class="idea"><strong>one day maybe</strong> — mountains</div>
-          <div class="idea"><strong>one day maybe</strong> — a concert you don’t overthink</div>
-          <div class="idea"><strong>one day maybe</strong> — quiet dinner, no rush</div>
+          <div class="idea"><strong>one day maybe</strong> — bowling, walk in KBR park?</div>
+          <div class="idea"><strong>one day maybe</strong> — mountains, maybe leh ladakh?</div>
+          <div class="idea"><strong>one day maybe</strong> — a concert you don’t overthink?</div>
+          <div class="idea"><strong>one day maybe</strong> — quiet dinner? usrikayhora? no rush</div>
+          <div class="idea"><strong>one day maybe</strong> — magnolia NYC, or a coffee in Valanam?</div>
         </div>
         <div class="spacer" style="height:18px"></div>
         <div class="quiet" data-reveal style="max-width:66ch">Not as plans. More as possibilities that feel… plausible. Like they already fit the shape of us.</div>
@@ -135,31 +157,35 @@
     <!-- 8) Words section -->
     <section class="section" id="s6">
       <div class="wrap">
-        <div class="bigline" data-reveal>Some words do a lot of work.</div>
+        <div class="bigline" data-reveal>Some comfort words do a lot of work.</div>
         <div class="spacer" style="height:18px"></div>
         <div class="words" aria-label="tap to reveal words" data-reveal>
           <div class="word" data-word>
             <p class="w">sarle</p>
-            <p class="m">It’s fine. It’s okay. Not a big deal. (But it still gets said.)</p>
+            <p class="m">It’s fine. It’s okay. Not a big deal. (But it still gets said.) Sometimes as M's irritation anko.</p>
           </div>
           <div class="word" data-word>
             <p class="w">parle</p>
-            <p class="m">Like “let it be.” Move on. Don’t stretch it into a whole thing.</p>
+            <p class="m">Like “let it be.” Move on. Don’t stretch it into a whole thing. Perfect</p>
           </div>
           <div class="word" data-word>
             <p class="w">ok le</p>
-            <p class="m">Not cold. Not warm. Just a small agreement that keeps the conversation flowing.</p>
+            <p class="m">Not cold. Not warm. Just a small agreement that you understood.. maybe keeps the conversation flowing?</p>
+          </div>
+          <div class="word" data-word>
+            <p class="w">pccch</p>
+            <p class="m">pcch?</p>
           </div>
         </div>
         <div class="spacer" style="height:18px"></div>
-        <div class="quiet" data-reveal style="max-width:70ch">I didn’t realize how much tone is carried by tiny phrases until they came back exactly the same.</div>
+        <div class="quiet" data-reveal style="max-width:70ch">I didn’t realize how much tone is carried by these tiny phrases.</div>
       </div>
     </section>
 
     <!-- 9) Time section -->
     <section class="section" id="s7">
       <div class="wrap">
-        <div class="bigline" data-reveal>Time zones make it obvious. The rest is quieter.</div>
+        <div class="bigline" data-reveal>Our Time zones make it obvious. The rest is quieter.</div>
         <div class="spacer" style="height:18px"></div>
         <div class="time-grid" data-reveal>
           <div class="clock paper">
@@ -175,31 +201,57 @@
         </div>
         <div class="since paper" data-reveal>
           <p class="k">still daytime somewhere</p>
-          <p class="v" id="since">time since reconnect: —</p>
+          <p class="v" id="since">but the time since you last felt mine: 00:00</p>
         </div>
       </div>
     </section>
 
+    
+
     <!-- 10) Photo section -->
     <section class="section" id="s8">
       <div class="wrap">
-        <div class="bigline" data-reveal>things we never really documented</div>
+        <div class="bigline" data-reveal>build me- a mood board based on the partner - challenge</div>
         <div class="spacer" style="height:14px"></div>
-        <div class="photos" data-reveal>
-          <div class="paper photo-grid" id="photoGrid" aria-label="photo placeholders">
+        <div class="moodboard" data-reveal>
+          <div class="moodboard-ideas">
+            <p class="ideas-title">some ideas to inspire:</p>
+            <div class="ideas-list">
+              <span class="idea-tag">colors that feel like the other</span>
+              <span class="idea-tag">places that feel like the other</span>
+              <span class="idea-tag">textures & moods</span>
+              <span class="idea-tag">moments that feel like the other</span>
+              <span class="idea-tag">anything really</span>
+            </div>
+          </div>
+          <div class="paper photo-grid" id="photoGrid" aria-label="mood board">
             <div class="ph" data-slot="0"></div>
             <div class="ph" data-slot="1"></div>
             <div class="ph" data-slot="2"></div>
             <div class="ph" data-slot="3"></div>
             <div class="ph" data-slot="4"></div>
             <div class="ph" data-slot="5"></div>
+            <div class="ph" data-slot="6"></div>
+            <div class="ph" data-slot="7"></div>
+            <div class="ph" data-slot="8"></div>
           </div>
-          <div class="paper upload">
-            <p class="title">Add a few images (optional)</p>
-            <p class="desc">No auto-upload. Nothing leaves this file. It just fills the empty squares while you’re here.</p>
+            <p class="title">curate your mood board</p>
+            <p class="desc">upload up to 9 images. arrange them however feels right when you think about me. no judgment what you pick.</p>
             <input type="file" id="fileInput" accept="image/*" multiple />
-            <p class="hint">Tip: choose 1–6 images. They’ll place left to right. Refresh clears them.</p>
+            <p class="hint">this mood board is based on me. build yours, and once you're happy, send me a screenshot. I'll send you mine too.</p>
           </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10b) Spotify playlist -->
+    <section class="section" id="s8b">
+      <div class="wrap">
+        <div class="bigline" data-reveal>curated our playlist</div>
+        <div class="spacer" style="height:14px"></div>
+        <div class="playlist-embed" data-reveal>
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2evd4XZOQQsZYTKD5acnDq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
     </section>
@@ -210,12 +262,12 @@
         <div class="bigline" data-reveal>color memory</div>
         <div class="spacer" style="height:16px"></div>
         <div class="swatches" data-reveal aria-label="color swatches">
-          <div class="sw" style="--c: rgba(127,155,182,0.70)"></div>
-          <div class="sw" style="--c: rgba(183,155,92,0.68)"></div>
-          <div class="sw" style="--c: rgba(167,173,182,0.78)"></div>
-          <div class="sw" style="--c: rgba(251,250,247,1)"></div>
-          <div class="sw" style="--c: rgba(45,55,72,0.20)"></div>
-        </div>
+  <div class="sw" style="--c: rgba(186, 161, 232, 0.85)"></div> <!-- lavender -->
+  <div class="sw" style="--c: rgba(120, 20, 40, 0.80)"></div>  <!-- deep maroon -->
+  <div class="sw" style="--c: rgba(38, 64, 120, 0.80)"></div>  <!-- dark navy -->
+  <div class="sw" style="--c: rgba(252, 250, 246, 1)"></div>   <!-- warm white -->
+  <div class="sw" style="--c: rgba(198, 167, 92, 0.80)"></div> <!-- gold accent -->
+</div>
         <div class="spacer" style="height:18px"></div>
         <div class="quiet" data-reveal style="max-width:66ch">No labels. Just colors that keep showing up in different places.</div>
       </div>
@@ -224,13 +276,13 @@
     <!-- 12) Question section -->
     <section class="section" id="s10">
       <div class="wrap q">
-        <div class="bigline" data-reveal>what was this?</div>
+        <div class="bigline" data-reveal>So, what was this?</div>
         <div class="opts" data-reveal>
           <button class="btn" data-opt>conversation habit</button>
           <button class="btn" data-opt>coincidence</button>
           <button class="btn" data-opt>unfinished thought</button>
         </div>
-        <div class="paper reply" id="reply">maybe just familiarity</div>
+        <div class="paper reply" id="reply">pccchhh, maybe just familiarity</div>
       </div>
     </section>
 
@@ -238,8 +290,8 @@
     <section class="section" id="s11">
       <div class="wrap ending">
         <div class="initials" aria-hidden="true">
-          <span id="i1">R</span>
-          <span id="i2">M</span>
+          <span id="i1">M</span>
+          <span id="i2">K</span>
         </div>
         <div class="paper final" data-reveal>
           <div class="quiet" style="max-width:66ch">
